@@ -1,0 +1,189 @@
+Fitter Route Stage Report for basic_io_testing
+Sat Jan 10 14:53:38 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Delay Chain Summary
+  3. Routing Usage Summary
+  4. Route Messages
+  5. Global Router Wire Utilization Map
+  6. Peak Wire Demand Summary
+  7. Peak Wire Demand Details
+  8. Peak Total Grid Crossings
+  9. Global Router Congestion Hotspot Summary
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                                                        ;
++-----------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; Name      ; Pin Type ; Input Delay Chain 0 ; Output Delay Chain ; OE Delay Chain ; IO_12_LANE Input Data Delay Chain ; IO_12_LANE Input Strobe Delay Chain ;
++-----------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; LED[0]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[1]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[2]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[3]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[4]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; LED[5]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; SWITCH[0] ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; SWITCH[1] ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; SWITCH[2] ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; SWITCH[3] ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; KEY[0]    ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; KEY[1]    ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
++-----------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+
+
++---------------------------------------------------------------+
+; Routing Usage Summary                                         ;
++--------------------------------------+------------------------+
+; Routing Resource Type                ; Usage                  ;
++--------------------------------------+------------------------+
+; Block Input Mux Wrapbacks            ; 0 / 43,616 ( 0 % )     ;
+; Block Input Muxes                    ; 6 / 500,456 ( < 1 % )  ;
+; Block interconnects                  ; 6 / 526,400 ( < 1 % )  ;
+; C1 interconnects                     ; 3 / 234,240 ( < 1 % )  ;
+; C4 interconnects                     ; 4 / 229,360 ( < 1 % )  ;
+; C8 interconnects                     ; 9 / 22,936 ( < 1 % )   ;
+; DCM_muxes                            ; 0 / 216 ( 0 % )        ;
+; DELAY_CHAINs                         ; 0 / 1,262 ( 0 % )      ;
+; Direct links                         ; 0 / 526,400 ( 0 % )    ;
+; HIO Buffers                          ; 2 / 10,528 ( < 1 % )   ;
+; IO75XDDRFMXCKTREE_CLKDRV_BIG_VCO_REs ; 0 / 8 ( 0 % )          ;
+; IO75XDDRFMXCKTREE_CLKDRV_GM0_REs     ; 0 / 8 ( 0 % )          ;
+; IO75XDDRFMXCKTREE_CLKDRV_VCO_INPUTs  ; 0 / 4 ( 0 % )          ;
+; IO75XDDRFMXCKTREE_CLKDRV_VCO_OUTPUTs ; 0 / 4 ( 0 % )          ;
+; IO75XDDRFMXCKTREE_FB_MUX31_REs       ; 0 / 24 ( 0 % )         ;
+; IOFBRADAPT_C2P_BUF_INPUTs            ; 0 / 66 ( 0 % )         ;
+; IOFBRADAPT_C2P_BUF_OUTPUTs           ; 0 / 66 ( 0 % )         ;
+; IOFBRADAPT_FRZ_BUFS_REs              ; 0 / 308 ( 0 % )        ;
+; IOFBRADAPT_P2C_BUF_INPUTs            ; 0 / 142 ( 0 % )        ;
+; IOFBRADAPT_P2C_BUF_OUTPUTs           ; 0 / 142 ( 0 % )        ;
+; Programmable Invert Buffers          ; 0 / 208 ( 0 % )        ;
+; Programmable Invert Inputs           ; 6 / 57,078 ( < 1 % )   ;
+; Programmable Inverts                 ; 6 / 57,078 ( < 1 % )   ;
+; R0 interconnects                     ; 8 / 401,380 ( < 1 % )  ;
+; R1 interconnects                     ; 3 / 229,360 ( < 1 % )  ;
+; R12 interconnects                    ; 1 / 34,404 ( < 1 % )   ;
+; R2 interconnects                     ; 2 / 115,620 ( < 1 % )  ;
+; R4 interconnects                     ; 4 / 117,500 ( < 1 % )  ;
+; R6 interconnects                     ; 10 / 118,440 ( < 1 % ) ;
+; Redundancy Muxes                     ; 2 / 20,728 ( < 1 % )   ;
+; Row Clock Tap-Offs                   ; 0 / 34,404 ( 0 % )     ;
+; Switchbox_clock_muxes                ; 0 / 1,920 ( 0 % )      ;
+; VIO Buffers                          ; 4 / 8,320 ( < 1 % )    ;
+; Vertical_seam_tap_muxes              ; 0 / 576 ( 0 % )        ;
++--------------------------------------+------------------------+
+
+
++----------------+
+; Route Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 25.3.0 Build 109 09/24/2025 SC Pro Edition
+    Info: Processing started: Sat Jan 10 14:51:31 2026
+    Info: System process ID: 24800
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off basic_io_testing -c basic_io_testing
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = basic_io_testing
+Info: Revision = basic_io_testing
+Info (22300): Design uses Placement Effort Multiplier = 1.0.
+Info (170193): Fitter routing operations beginning
+Info (20215): Router estimated peak short interconnect demand : 0% of right directional wire in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short right directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short left directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short up directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short down directional wire demand : 0% in region X0_Y0 to X11_Y7
+Info (20215): Router estimated peak long high speed interconnect demand : 14% of down directional wire in region X120_Y48 to X122_Y54
+    Info (20265): Estimated peak long high speed right directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak long high speed left directional wire demand : 4% in region X120_Y24 to X122_Y31
+    Info (20265): Estimated peak long high speed up directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak long high speed down directional wire demand : 14% in region X120_Y48 to X122_Y54
+    Info (20315): Note that the router may use short wires to implement long connections at higher delay
+Info (11888): Total time spent on timing analysis during Routing is 0.01 seconds.
+Warning (18291): Timing characteristics of device A5EB013BB23BE4SR1 are preliminary
+Info (16607): Fitter routing operations ending: elapsed time is 00:00:16
+
+
+--------------------------------------
+; Global Router Wire Utilization Map ;
+--------------------------------------
+This report is unavailable in plain text report export.
+
+
++-------------------------------------------------------------------------------+
+; Peak Wire Demand Summary                                                      ;
++-----------------+-----------+-----------------------------------+-------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
++-----------------+-----------+-----------------------------------+-------------+
+; long high speed ; left      ; [(120, 24), (122, 31)]            ; 4.167 %     ;
+; long high speed ; down      ; [(120, 48), (122, 54)]            ; 14.286 %    ;
++-----------------+-----------+-----------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names               ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------+
+; long high speed ; left      ; [(120, 24), (122, 31)]            ; 4.167 %     ;    High Routing Fan-Out ;
+;     --          ;           ;                                   ;             ; KEY[0]~input            ;
+;     --          ;           ;                                   ;             ; KEY[1]~input            ;
+; long high speed ; left      ; [(120, 24), (122, 31)]            ; 4.167 %     ;    Long Distance        ;
+;     --          ;           ;                                   ;             ; KEY[0]~input            ;
+;     --          ;           ;                                   ;             ; KEY[1]~input            ;
+; long high speed ; down      ; [(120, 48), (122, 54)]            ; 14.286 %    ;    High Routing Fan-Out ;
+;     --          ;           ;                                   ;             ; KEY[0]~input            ;
+;     --          ;           ;                                   ;             ; KEY[1]~input            ;
+; long high speed ; down      ; [(120, 48), (122, 54)]            ; 14.286 %    ;    Long Distance        ;
+;     --          ;           ;                                   ;             ; KEY[0]~input            ;
+;     --          ;           ;                                   ;             ; KEY[1]~input            ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------+
+
+
++----------------------------------------+
+; Peak Total Grid Crossings              ;
++-----------------+----------------------+
+; Net Name        ; Total Grid Crossings ;
++-----------------+----------------------+
+; KEY[1]~input    ; 8                    ;
+; KEY[0]~input    ; 8                    ;
+; SWITCH[3]~input ; 1                    ;
+; SWITCH[2]~input ; 1                    ;
+; SWITCH[0]~input ; 1                    ;
++-----------------+----------------------+
+
+
+--------------------------------------------
+; Global Router Congestion Hotspot Summary ;
+--------------------------------------------
+No congestion hotspots found where global router short wire usage exceeded 100%.
+If the design is hard to route, use other techniques to analyze congestion. Refer to the Estimated Delay Added for Hold Timing section in the Fitter report and routing utilization in the Chip Planner.
+
+

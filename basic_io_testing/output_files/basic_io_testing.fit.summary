@@ -1,0 +1,17 @@
+Fitter Status : Successful - Sat Jan 10 14:54:02 2026
+Quartus Prime Version : 25.3.0 Build 109 09/24/2025 SC Pro Edition
+Revision Name : basic_io_testing
+Top-level Entity Name : io_test
+Family : Agilex 5
+Device : A5EB013BB23BE4SR1
+Timing Models : Preliminary
+Power Models : Preliminary
+Device Status : Preliminary
+Logic utilization (in ALMs) : 0 / 46,800 ( 0 % )
+Total dedicated logic registers : 0
+Total pins : 12 / 351 ( 3 % )
+Total block memory bits : 0 / 7,331,840 ( 0 % )
+Total RAM Blocks : 0 / 358 ( 0 % )
+Total DSP Blocks : 0 / 188 ( 0 % )
+Total HSSI HPS : 0 / 1 ( 0 % )
+Total PLLs : 0 / 11 ( 0 % )

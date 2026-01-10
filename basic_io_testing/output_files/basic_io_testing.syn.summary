@@ -1,0 +1,9 @@
+Synthesis Status : Successful - Sat Jan 10 14:51:28 2026
+Revision Name : basic_io_testing
+Top-level Entity Name : io_test
+Family : Agilex 5
+Quartus Prime Version : 25.3.0 Build 109 09/24/2025 SC Pro Edition
+Device : A5EB013BB23BE4SR1
+Logic utilization estimate (in ALMs) : 2 / 46,800 ( < 1 % )
+Total dedicated logic registers : 0
+Estimated DSP Blocks Post-Merging : 0

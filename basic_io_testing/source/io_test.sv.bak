@@ -1,0 +1,9 @@
+module io_test(
+	input logic [1:0] KEY,
+	input logic [3:0] SWITCH,
+	output logic [5:0] LED
+);
+
+	LED = {~KEY[1], ~KEY[0], SWITCH};
+
+endmodule
