@@ -1,0 +1,90 @@
+module fifo_sync#(
+	parameter DATA_BITS = 8,
+	parameter ADDR_BITS = 4
+)(
+	input logic [DATA_BITS-1:0] data_in,
+	input logic clk, rst_n,
+	input logic wr_en, rd_en,
+	output logic [DATA_BITS-1:0] data_out,
+	output logic empty, full
+);
+
+	localparam FIFO_DEPTH = 1 << ADDR_BITS;
+
+	logic [DATA_BITS-1:0] memory [0:FIFO_DEPTH-1];
+	logic [ADDR_BITS-1:0] current_wr_ptr, next_wr_ptr, current_wr_ptr_buff;
+	logic [ADDR_BITS-1:0] current_rd_ptr, next_rd_ptr, current_rd_ptr_buff;
+
+	logic fifo_full, fifo_empty, full_buff, empty_buff;
+	logic write_enabled;
+
+
+
+	always_ff @( posedge clk ) begin 
+		if (write_enabled) memory[current_wr_ptr] <= data_in;
+	end
+
+	assign write_enabled = !fifo_full && wr_en;
+
+	assign data_out = memory[current_rd_ptr];
+
+
+	always_ff @(posedge clk, negedge rst_n) begin
+		if (!rst_n) begin
+			current_rd_ptr <= 0;
+			current_wr_ptr <= 0;
+			fifo_empty <= 1'b1;
+			fifo_full <= 1'b0;
+		end
+		else begin
+			current_rd_ptr <= current_rd_ptr_buff;
+			current_wr_ptr <= current_wr_ptr_buff;
+			fifo_empty <= empty_buff;
+			fifo_full <= full_buff;
+		end
+	end
+
+	
+	always_comb begin 
+		next_rd_ptr = current_rd_ptr + 1;
+		next_wr_ptr = current_wr_ptr + 1;
+
+		current_rd_ptr_buff = current_rd_ptr;
+		current_wr_ptr_buff = current_wr_ptr;
+		full_buff = fifo_full;
+		empty_buff = fifo_empty; 
+
+		case ({wr_en, rd_en})
+			2'b01: begin // read button pressed
+				if (!fifo_empty) begin
+					current_rd_ptr_buff = next_rd_ptr;
+					full_buff = 1'b0;
+					if (next_rd_ptr == current_wr_ptr) empty_buff = 1'b1;
+				end
+			end
+			
+			2'b10: begin// write button pressed
+				if (!fifo_full) begin
+					current_wr_ptr_buff = next_wr_ptr;
+					empty_buff = 1'b0;
+					if (next_wr_ptr == current_rd_ptr) full_buff = 1'b1;
+				end
+			end
+
+			2'b11: begin // both pressed // thiss needs fixing 
+				current_rd_ptr_buff = next_rd_ptr;
+				current_wr_ptr_buff = next_wr_ptr; 
+			end
+
+		endcase
+	end
+
+
+	assign empty = fifo_empty;
+	assign full = fifo_full;
+
+
+
+
+
+endmodule

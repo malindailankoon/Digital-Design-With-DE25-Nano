@@ -1,0 +1,40 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'u_pll|iopll_0_outclk0'
+Slack : 196.822
+TNS   : 0.000
+Corner: Slow fix4 0C Model
+
+Type  : Hold 'u_pll|iopll_0_outclk0'
+Slack : 0.099
+TNS   : 0.000
+Corner: Fast fix4 0C Model
+
+Type  : Minimum Pulse Width 'u_pll|iopll_0|tennm_ph2_iopll|ref_clk0'
+Slack : 9.285
+TNS   : 0.000
+Corner: Slow fix4 100C Model
+
+Type  : Minimum Pulse Width 'u_pll|iopll_0_refclk'
+Slack : 9.793
+TNS   : 0.000
+Corner: Slow fix4 0C Model
+
+Type  : Minimum Pulse Width 'u_pll|iopll_0_m_cnt_clk'
+Slack : 9.861
+TNS   : 0.000
+Corner: Slow fix4 0C Model
+
+Type  : Minimum Pulse Width 'u_pll|iopll_0_n_cnt_clk'
+Slack : 9.925
+TNS   : 0.000
+Corner: Slow fix4 0C Model
+
+Type  : Minimum Pulse Width 'u_pll|iopll_0_outclk0'
+Slack : 99.517
+TNS   : 0.000
+Corner: Slow fix4 100C Model
+
+------------------------------------------------------------

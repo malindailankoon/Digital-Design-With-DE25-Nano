@@ -1,0 +1,87 @@
+module debounce#(
+	parameter COUNTER_BITS = 18
+)(
+	input clk, rst,
+	input btn,
+	input db_level, // checks for a stable button
+	input db_tick, // outputs 1 immediately on pressing
+);
+
+	typedef enum logic [1:0] {
+		zero,
+		wait0,
+		one,
+		wait1
+	} state_t;
+	
+	state_t current_state, next_state;
+	
+	logic [COUNTER_BITS-1:0] q_reg;
+	logic [COUNTER_BITS-1:0] q_next;
+	logic q_zero;
+	logic q_load, q_dec;
+	
+	always_ff @(posedge clk, posedge rst) begin
+		if (rst) begin
+			current_state <= zero;
+			q_reg <= 0;
+		end
+		else begin
+			current_state <= next_state;
+			q_reg <= q_next;
+		end
+	end
+	
+	assign q_next = (q_load) ? (COUNTER_BITS{1'b1}) : // load with all 1s
+						 (q_dec) ? q_reg - 1 : // decrement by 1
+						 q_reg; // no change
+						 
+	assign q_zero = (q_next == 0); // status signal indicating if the timer is zero
+	
+	
+	// next state combinational logic
+	always_comb begin
+		//==============
+		next_state = current_state;
+		q_load = 1'b0;
+		q_dec = 1'b0;
+		db_tick = 1'b0
+		//==============
+		//==above part is the default logic if no assignments occor below part of the combinational block
+		//==============
+		
+		case (current_state) 
+			zero: begin
+						db_level = 1'b0;
+						if (btn) begin
+							next_state = wait1;
+							q_load = 1'b1;
+						end
+					end
+					
+			wait1: begin
+						db_level = 1'b0;
+						if (btn) begin
+							q_dec = 1'b1;
+							if (q_zero) begin
+								next_state = one;
+								db_tick = 1'b1;
+							end
+						end else next_state = zero;
+					 end
+					 
+			one: begin
+				     db_level = 1'b1;
+					  if (~btn) begin
+					     q_dec = 1'b1;
+						  if (q_zero) begin
+						     next_state = zero;
+						  end
+					  end else next_state = one;
+				  end
+			
+			default: next_state = zero;
+	end
+	
+
+endmodule

@@ -1,0 +1,10 @@
+module fifo_demo(
+	input logic CLOCK_50,
+	input logic [1:0] KEY,
+	input logic [3:0] SWITCH,
+	output logic [7:0] LED
+);
+
+	
+
+endmodule

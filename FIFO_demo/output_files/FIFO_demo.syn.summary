@@ -1,0 +1,9 @@
+Synthesis Status : Successful - Sun Jan 11 23:25:30 2026
+Revision Name : FIFO_demo
+Top-level Entity Name : FIFO_demo
+Family : Agilex 5
+Quartus Prime Version : 25.3.0 Build 109 09/24/2025 SC Pro Edition
+Device : A5EB013BB23BE4SR1
+Logic utilization estimate (in ALMs) : 660 / 46,800 ( 1 % )
+Total dedicated logic registers : 55
+Estimated DSP Blocks Post-Merging : 0

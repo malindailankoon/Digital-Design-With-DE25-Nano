@@ -1,0 +1,124 @@
+Flow report for FIFO_demo
+Sun Jan 11 23:29:37 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Flow Summary
+  2. Flow Settings
+  3. Flow Non-Default Global Settings
+  4. Flow Elapsed Time
+  5. Flow OS Summary
+  6. Flow Log
+  7. Legal Notice
+
+
+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++---------------------------------+--------------------------------------------+
+; Flow Status                     ; Successful - Sun Jan 11 23:29:37 2026      ;
+; Quartus Prime Version           ; 25.3.0 Build 109 09/24/2025 SC Pro Edition ;
+; Revision Name                   ; FIFO_demo                                  ;
+; Top-level Entity Name           ; FIFO_demo                                  ;
+; Family                          ; Agilex 5                                   ;
+; Device                          ; A5EB013BB23BE4SR1                          ;
+; Timing Models                   ; Preliminary                                ;
+; Power Models                    ; Preliminary                                ;
+; Device Status                   ; Preliminary                                ;
+; Logic utilization (in ALMs)     ; 102 / 46,800 ( < 1 % )                     ;
+; Total dedicated logic registers ; 55                                         ;
+; Total pins                      ; 12 / 351 ( 3 % )                           ;
+; Total block memory bits         ; 48 / 7,331,840 ( < 1 % )                   ;
+; Total RAM Blocks                ; 1 / 358 ( < 1 % )                          ;
+; Total DSP Blocks                ; 0 / 188 ( 0 % )                            ;
+; Total HSSI HPS                  ; 0 / 1 ( 0 % )                              ;
+; Total PLLs                      ; 1 / 11 ( 9 % )                             ;
++---------------------------------+--------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 01/11/2026 23:25:09 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; FIFO_demo           ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                   ;
++--------------------------+--------------------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name          ; Value                                                                    ; Default Value ; Entity Name ; Section Id     ;
++--------------------------+--------------------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID    ; 10995770589193.176815410903400                                           ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT   ; Verilog Hdl                                                              ; --            ; --          ; eda_simulation ;
+; EDA_TIME_SCALE           ; 1 ps                                                                     ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP   ; 100                                                                      ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP   ; 0                                                                        ; --            ; --          ; --             ;
+; MISC_FILE                ; C:/Users/immkb/Desktop/FPGA_stuff/FIFO/FIFO_demo/ip/iopll/iopll.cmp      ; --            ; --          ; --             ;
+; MISC_FILE                ; C:/Users/immkb/Desktop/FPGA_stuff/FIFO/FIFO_demo/ip/iopll.ip             ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY ; C:/Users/immkb/Desktop/FPGA_stuff/FIFO/FIFO_demo/output_files            ; --            ; --          ; --             ;
+; SOPCINFO_FILE            ; C:/Users/immkb/Desktop/FPGA_stuff/FIFO/FIFO_demo/ip/iopll/iopll.sopcinfo ; --            ; --          ; --             ;
++--------------------------+--------------------------------------------------------------------------+---------------+-------------+----------------+
+
+
++------------------------------------------------------+
+; Flow Elapsed Time                                    ;
++-----------------+--------------+---------------------+
+; Module Name     ; Elapsed Time ; Peak Virtual Memory ;
++-----------------+--------------+---------------------+
+; Synthesis       ; 00:00:24     ; 1086 MB             ;
+; Fitter          ; 00:03:26     ; 6426 MB             ;
+; Timing Analyzer ; 00:00:10     ; 1047 MB             ;
+; Assembler       ; 00:00:23     ; 2741 MB             ;
+; Total           ; 00:04:23     ; --                  ;
++-----------------+--------------+---------------------+
+
+
++-------------------------------------------------------------------------------+
+; Flow OS Summary                                                               ;
++-----------------+------------------+------------+------------+----------------+
+; Module Name     ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++-----------------+------------------+------------+------------+----------------+
+; Synthesis       ; MalindaPC        ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Fitter          ; MalindaPC        ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Timing Analyzer ; MalindaPC        ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Assembler       ; MalindaPC        ; Windows 11 ; 10.0.26200 ; x86_64         ;
++-----------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_syn --read_settings_files=on --write_settings_files=off FIFO_demo -c FIFO_demo
+quartus_fit --read_settings_files=on --write_settings_files=off FIFO_demo -c FIFO_demo
+quartus_sta FIFO_demo -c FIFO_demo --mode=finalize
+quartus_asm --read_settings_files=on --write_settings_files=off FIFO_demo -c FIFO_demo
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+

@@ -1,0 +1,14 @@
+
+State Machine - Summary
+
+State Machine - db_key_1|current_state
+Name current_state.one current_state.zero current_state.wait1 
+current_state.zero 0 0 0 
+current_state.wait1 0 1 1 
+current_state.one 1 1 0 
+
+State Machine - db_key_0|current_state
+Name current_state.one current_state.zero current_state.wait1 
+current_state.zero 0 0 0 
+current_state.wait1 0 1 1 
+current_state.one 1 1 0 

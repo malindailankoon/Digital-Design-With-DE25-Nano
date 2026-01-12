@@ -1,0 +1,17 @@
+Fitter Status : Successful - Sun Jan 11 23:28:59 2026
+Quartus Prime Version : 25.3.0 Build 109 09/24/2025 SC Pro Edition
+Revision Name : FIFO_demo
+Top-level Entity Name : FIFO_demo
+Family : Agilex 5
+Device : A5EB013BB23BE4SR1
+Timing Models : Preliminary
+Power Models : Preliminary
+Device Status : Preliminary
+Logic utilization (in ALMs) : 102 / 46,800 ( < 1 % )
+Total dedicated logic registers : 55
+Total pins : 12 / 351 ( 3 % )
+Total block memory bits : 48 / 7,331,840 ( < 1 % )
+Total RAM Blocks : 1 / 358 ( < 1 % )
+Total DSP Blocks : 0 / 188 ( 0 % )
+Total HSSI HPS : 0 / 1 ( 0 % )
+Total PLLs : 1 / 11 ( 9 % )
